@@ -4,8 +4,8 @@ import { Veggie } from "../components/Veggie";
 const Home = () => {
   return (
     <>
-      <Popular />
       <Veggie />
+      <Popular />
     </>
   );
 };
