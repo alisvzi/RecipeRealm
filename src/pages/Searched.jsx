@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CardCuisine, Grid } from "../components/StyledComponents";
 
 const Searched = () => {
@@ -20,8 +20,10 @@ const Searched = () => {
     <Grid>
       {searchedRecipe.map((item) => (
         <CardCuisine key={item.id}>
-          <img src={item.image} alt={item.title} />
-          <h4>{item.title}</h4>
+          <Link to={"/recipe/" + item.id}>
+            <img src={item.image} alt={item.title} />
+            <h4>{item.title}</h4>
+          </Link>
         </CardCuisine>
       ))}
     </Grid>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { CardCuisine, Grid } from "../components/StyledComponents";
 
 const Cuisine = () => {
@@ -17,11 +17,18 @@ const Cuisine = () => {
     getCuisine(params.type);
   }, [params.type]);
   return (
-    <Grid>
+    <Grid
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {cuisine.map((item) => (
         <CardCuisine key={item.id}>
-          <img src={item.image} alt={item.title} />
-          <h4>{item.title}</h4>
+          <Link to={"/recipe/" + item.id}>
+            <img src={item.image} alt={item.title} />
+            <h4>{item.title}</h4>
+          </Link>
         </CardCuisine>
       ))}
     </Grid>

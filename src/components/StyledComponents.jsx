@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -49,7 +50,7 @@ export const List = styled.div`
   margin: 2rem 0;
 `;
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
@@ -113,5 +114,122 @@ export const FormStyle = styled.form`
     left: 0;
     transform: translate(100%, -50%);
     color: white;
+  }
+`;
+export const DetailWrapper = styled.div`
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: flex;
+
+  .active {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: white;
+  }
+
+  p {
+    color: var(--gray-800);
+    line-height: 1.25rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    margin-top: 2rem;
+    color: var(--gray-800);
+  }
+
+  li {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+
+    @media (max-width: 865px) {
+      margin-left: 1rem;
+    }
+  }
+
+  img {
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 4px 2px rgba(0, 0, 0, 0.27);
+  }
+
+  @media (max-width: 1400px) {
+    img {
+      width: 450px;
+    }
+  }
+
+  @media (max-width: 1120px) {
+    img {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 865px) {
+    flex-direction: column;
+
+    img {
+      width: 100%;
+    }
+
+    .imageWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
+
+export const Button = styled.button`
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  color: #313131;
+  background: white;
+  border: 2px solid black;
+  margin-right: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 7px;
+
+  &:hover {
+    background: #292828;
+    color: white;
+  }
+`;
+
+export const Info = styled.div`
+  margin-left: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 700px;
+  max-width: 100%;
+
+  ul {
+    margin-top: 0;
+  }
+
+  @media (max-width: 865px) {
+    button {
+      width: 100%;
+    }
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+`;
+export const Logo = styled(Link)`
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Lobster Two", cursive;
+`;
+export const Nav = styled.div`
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: 2rem;
   }
 `;
