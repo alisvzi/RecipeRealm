@@ -3,7 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  margin: 0.4rem 0rem;
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 export const Card = styled.div`
   min-height: 20rem;
@@ -34,6 +39,13 @@ export const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 865px) {
+      font-size: 0.9rem;
+    }
+  }
+  @media (max-width: 865px) {
+    min-height: 10rem;
+    font-size: 0.5rem;
   }
 `;
 
@@ -47,13 +59,20 @@ export const Gradient = styled.div`
 export const List = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+
   margin: 2rem 0;
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+  }
 `;
 
 export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
+  align-items: center;
+  justify-content: center;
 `;
 export const CardCuisine = styled.div`
   img {
@@ -69,6 +88,7 @@ export const Slink = styled(NavLink)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   align-items: center;
   border-radius: 50%;
   margin-right: 2rem;
@@ -89,13 +109,33 @@ export const Slink = styled(NavLink)`
   &.active {
     background: linear-gradient(to right, #f27121, #e94057);
   }
+  @media (max-width: 865px) {
+    svg {
+      font-size: 1.2rem;
+    }
+    h4 {
+      font-size: 0.7rem;
+    }
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 `;
 
 export const FormStyle = styled.form`
-  margin: 0 20rem;
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   div {
     position: relative;
-    width: 100%;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   input {
@@ -104,14 +144,16 @@ export const FormStyle = styled.form`
     font-size: 1.5rem;
     color: white;
     padding: 1rem 3rem;
-    border-radius: 1rem;
+    border: none;
+    border-radius: 0.5rem;
     outline: none;
     width: 100%;
   }
+
   svg {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 0%;
     transform: translate(100%, -50%);
     color: white;
   }
@@ -223,7 +265,7 @@ export const Info = styled.div`
 export const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: "Lobster Two", cursive;
+  font-family: "Consolas", cursive;
 `;
 export const Nav = styled.div`
   padding: 4rem 0;

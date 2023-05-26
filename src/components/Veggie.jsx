@@ -34,6 +34,14 @@ export const Veggie = () => {
             pagination: false,
             drag: "free",
             gap: "5rem",
+            breakpoints: {
+              1350: {
+                perPage: 1,
+              },
+              865: {
+                gap: "1rem",
+              },
+            },
           }}
         >
           {veggie.map((recipe) => (
