@@ -4,6 +4,7 @@
 - Simple and eye-catching design and attractive image sliders
 - Has beautiful effects
 - The ability to search for food
+- It has several categories to search for food based on nationality
 - The technologies used in this project are:
   react.js ,
   style components , react router , splide.js
